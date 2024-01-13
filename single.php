@@ -25,7 +25,7 @@ $current_id = get_the_ID();
           <time class="p-blog__date" date-time="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php echo get_the_date( 'Y/m/d' ); ?></time>
           <div class="p-blog__category">
           <?php
-            $terms = get_the_terms($post->ID, 'blog_category');
+            $terms = get_the_terms($post->ID, 'category');
             if ($terms) :
                 foreach ($terms as $term) {
                     echo '<a class="p-blog__category-item" href="' . get_term_link($term) . '">' . $term->name . '</a>';
@@ -43,7 +43,6 @@ $current_id = get_the_ID();
           <?php the_content(); ?>
         </div>
       </div>
-      <?php get_sidebar(); ?>
     </div>
     <div class="p-blog__related">
       <p class="p-blog__related-title">こんな記事も読まれています</p>
@@ -52,7 +51,7 @@ $current_id = get_the_ID();
       $args = array(
         'posts_per_page' => 2,
         'orderby' => 'rand',
-        'post_type' => array('blog'),
+        'post_type' => 'post',
         'post_status' => 'publish',
         'post__not_in' => array($current_id)
         );
@@ -74,7 +73,7 @@ $current_id = get_the_ID();
             <h3 class="blog__item-title serif"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
             <div class="blog__category">
             <?php
-              $terms = get_the_terms($post->ID, 'blog_category');
+              $terms = get_the_terms($post->ID, 'category');
               if ($terms) :
                   foreach ($terms as $term) {
                       echo '<a class="serif" href="' . get_term_link($term) . '">' . $term->name . '</a>';

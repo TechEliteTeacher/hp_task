@@ -248,7 +248,7 @@
         'posts_per_page' => 3,
         'orderby' => 'date',
         'order' => 'DESC',
-        'post_type' => array('blog'),
+        'post_type' => 'post',
         'post_status' => 'publish'
         );
         $wp_query = new WP_Query($args);
@@ -268,7 +268,7 @@
             <h3 class="blog__item-title serif"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
             <div class="blog__category">
             <?php
-              $terms = get_the_terms($post->ID, 'blog_category');
+              $terms = get_the_terms($post->ID, 'category');
               if ($terms) :
                   foreach ($terms as $term) {
                       echo '<a class="serif" href="' . get_term_link($term) . '">' . $term->name . '</a>';

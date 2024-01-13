@@ -9,19 +9,19 @@
           $footer_nav = [
             [
               'お部屋',
-              ''
+            esc_url(home_url('/')) . "#room"
             ],
             [
               'プラン',
-              ''
+              esc_url(home_url('/')). "#plan"
             ],
             [
               '四季',
-              ''
+            esc_url(home_url('/')) . "#seasons"
             ],
             [
               'アクセス',
-              ''
+            esc_url(home_url('/')) . "#access"
             ],
             [
               '楽園雅苑のサービス',

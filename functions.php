@@ -7,20 +7,17 @@ wp_enqueue_script('scriptjs', get_template_directory_uri() . '/js/index.js?'.fil
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
-function custom_archive_posts_per_page( $query ) {
-  // 主クエリ以外の変更を避ける
-  if ( ! is_admin() && $query->is_main_query() ) {
-      // news タクソノミーのアーカイブページかどうかを確認
-      if ( is_post_type_archive('news') ) {
-          $query->set( 'posts_per_page', 10 ); // 10件表示
-      } else {
-          // それ以外のタクソノミーアーカイブページやその他のアーカイブページでは9件表示
-          $query->set( 'posts_per_page', 9 );
-      }
+function post_has_archive($args, $post_type)
+{
+  if ('post' == $post_type) {
+    $args['rewrite'] = true;
+    $args['has_archive'] = 'blog'; //一覧ページで使いたいURL
   }
+  return $args;
 }
+add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
-add_action( 'pre_get_posts', 'custom_archive_posts_per_page' );
+add_theme_support('post-thumbnails');
 
 function truncate_text($text, $length = 20, $ellipsis = '…') {
   if (mb_strlen($text) > $length) {

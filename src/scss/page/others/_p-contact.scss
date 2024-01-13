@@ -1,0 +1,18 @@
+@use "../../base/_base" as *;
+@use "sass:math";
+
+.p-contact {
+  &__txt {
+    font-size: 18px;
+    line-height: math.div(34, 18);
+    letter-spacing: 0.3em;
+    margin-right: -0.3em;
+  }
+  &__hr {
+    height: 1px;
+    width: 100%;
+    background: $border;
+    border: none;
+    margin: 80px auto;
+  }
+}

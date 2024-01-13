@@ -1,0 +1,135 @@
+@use "../../base/_base" as *;
+@use "sass:math";
+
+.news {
+  background: #fff;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  @include media() {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+  .content_title {
+    gap: 2rem;
+    justify-content: flex-start;
+    margin-bottom: 80px;
+    max-width: 100%;
+    @include media() {
+      margin-bottom: 40px;
+    }
+  }
+  &__inner {
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  &__list {
+    margin-bottom: 60px;
+    @include media() {
+      margin-bottom: 28px;
+    }
+  }
+  &__item {
+    border-bottom: 1px solid $border;
+    &:first-child {
+      border-top: 1px solid $border;
+    }
+    &-link {
+      display: block;
+      padding-top: 32px;
+      padding-bottom: 24px;
+      padding-right: 60px;
+      color: $font;
+      position: relative;
+      @include media() {
+        padding-top: 24px;
+        padding-bottom: 18px;
+        padding-right: 40px;
+      }
+      .arrow {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background: url(../img/news-arrow-pc.png) no-repeat center / 40px auto;
+        @include media() {
+          width: 24px;
+          height: 24px;
+          background-image: url(../img/news-arrow-sp.png);
+          background-size: 24px auto;
+        }
+      }
+      @include hoverAnime {
+        .news__item-title {
+          text-decoration: underline;
+        }
+      }
+    }
+    &-time {
+      display: block;
+      font-size: 14px;
+      line-height: 10px;
+      letter-spacing: 0.3em;
+      font-weight: 400;
+      margin-bottom: 18px;
+      @include media() {
+        font-size: 12px;
+        line-height: 9px;
+        margin-bottom: 12px;
+      }
+    }
+    &-title {
+      font-size: 16px;
+      line-height: math.div(28, 16);
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      @include media() {
+        font-size: 14px;
+        line-height: math.div(26, 14);
+      }
+    }
+  }
+  &__btn {
+    border: 1px solid $primary;
+    background: #fff;
+    min-height: 60px;
+    min-width: 380px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    padding-left: 3.3em;
+    padding-right: 3em;
+    color: $primary;
+    position: relative;
+    box-sizing: border-box;
+    @include media() {
+      font-size: 16px;
+      width: 100%;
+      min-width: 0;
+    }
+    svg {
+      position: absolute;
+      right: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+      @include media() {
+        right: 20px;
+      }
+    }
+    transition: 0.3s ease-out;
+    transition-property: opacity;
+    @include hoverAnime {
+      opacity: 0.7;
+    }
+    &-box {
+      text-align: center;
+    }
+  }
+}

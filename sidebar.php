@@ -12,7 +12,7 @@
     );
     $args = array(
       'posts_per_page' => 10,
-      'post_type' => array('blog'),
+      'post_type' => 'post',
       'post_status' => 'publish',
       'post__in' => $wpp_query_ids,
       'orderby' => 'post__in'

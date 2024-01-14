@@ -9,31 +9,23 @@
           $footer_nav = [
             [
               'お部屋',
-              ''
+            esc_url(home_url('/')) . "#room"
             ],
             [
               'プラン',
-              ''
+              esc_url(home_url('/')). "#plan"
             ],
             [
               '四季',
-              ''
+            esc_url(home_url('/')) . "#seasons"
             ],
             [
               'アクセス',
-              ''
-            ],
-            [
-              '楽園雅苑のサービス',
-              '/service/'
+            esc_url(home_url('/')) . "#access"
             ],
             [
               'ブログ',
               '/blog/'
-            ],
-            [
-              'お知らせ',
-              '/news/'
             ],
           ];
           foreach($footer_nav as list($text, $link)):

@@ -248,7 +248,7 @@
         'posts_per_page' => 3,
         'orderby' => 'date',
         'order' => 'DESC',
-        'post_type' => array('blog'),
+        'post_type' => 'post',
         'post_status' => 'publish'
         );
         $wp_query = new WP_Query($args);
@@ -268,7 +268,7 @@
             <h3 class="blog__item-title serif"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
             <div class="blog__category">
             <?php
-              $terms = get_the_terms($post->ID, 'blog_category');
+              $terms = get_the_terms($post->ID, 'category');
               if ($terms) :
                   foreach ($terms as $term) {
                       echo '<a class="serif" href="' . get_term_link($term) . '">' . $term->name . '</a>';
@@ -295,49 +295,6 @@
   </div>
 </div>
 
-<div class="news" id="news">
-  <div class="news__inner">
-    <div class="content_title flex_center">
-        <p class="ja_title">お知らせ</p>
-        <div class="line"></div>
-        <p class="en_title">news</p>
-    </div>
-    <div class="news__body">
-      <?php 
-        $args = array(
-        'posts_per_page' => 3,
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'post_type' => array('news'),
-        'post_status' => 'publish'
-        );
-        $wp_query = new WP_Query($args);
-        if ( $wp_query->have_posts() ) : ?>
-      <div class="news__list">
-        <?php while($wp_query->have_posts()): $wp_query->the_post(); ?>
-        <article class="news__item">
-          <a href="<?php the_permalink(); ?>" class="news__item-link">
-            <time class="news__item-time serif" date-time="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php echo get_the_date( 'Y/m/d' ); ?></time>
-            <h3 class="news__item-title serif"><?php echo get_the_title(); ?></h3>
-            <span class="arrow"></span>
-          </a>
-        </article>
-        <?php endwhile; ?>
-      </div>
-      <div class="news__btn-box">
-        <a href="<?php echo esc_url(home_url('/news/')); ?>" class="news__btn">
-        お知らせ一覧はこちら
-        <svg width="22" height="8" viewBox="0 0 22 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 7H20L13.9623 1" stroke="#B8A973"/>
-        </svg>
-      </a>
-      </div>
-      <?php else: ?>
-      <p class="news__txt serif">お知らせはありません。</p>
-      <?php endif; ?>
-    </div>
-  </div>
-</div>
 
 <?php 
 get_footer();

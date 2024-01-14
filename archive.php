@@ -19,7 +19,7 @@
     <div class="blog__tabs">
       <p class="blog__tabs-item is-active">ALL</p>
     <?php
-      $terms = get_terms('blog_category');
+      $terms = get_terms('category');
       if ( ! empty( $terms ) && ! is_wp_error( $terms ) ):
           foreach ($terms as $term) {
               echo '<a class="blog__tabs-item" href="' . get_term_link($term) . '">' . $term->name . '</a>';
@@ -44,7 +44,7 @@
             <h3 class="blog__item-title serif"><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
             <div class="blog__category">
             <?php
-              $terms = get_the_terms($post->ID, 'blog_category');
+              $terms = get_the_terms($post->ID, 'category');
               if ($terms) :
                   foreach ($terms as $term) {
                       echo '<a class="serif" href="' . get_term_link($term) . '">' . $term->name . '</a>';

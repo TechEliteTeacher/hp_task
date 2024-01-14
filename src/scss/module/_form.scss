@@ -1,0 +1,25 @@
+@use "../base/_base" as *;
+@use "sass:math";
+
+.mw_wp_form_input {
+  .contact-hidden {
+    display: none;
+  }
+}
+
+.mw_wp_form_confirm {
+  .confirm-hidden {
+    display: none;
+  }
+  .contact-hidden {
+    text-align: center;
+  }
+  form span {
+    display: none;
+  }
+  .form_select {
+    &::after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@use "../../base/_base" as *;
+@use "sass:math";
+
+.p-privacy {
+  &__body {
+    & > p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: math.div(34, 18);
+      letter-spacing: 0.3em;
+      margin-right: -0.3em;
+      margin-bottom: 60px;
+      @include media() {
+        margin-bottom: 40px;
+        font-size: 16px;
+        line-height: 2;
+      }
+    }
+  }
+  &__txt {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: math.div(34, 18);
+    letter-spacing: 0.3em;
+    margin-right: -0.3em;
+    margin-bottom: 60px;
+    @include media() {
+      margin-bottom: 40px;
+      font-size: 16px;
+      line-height: 2;
+    }
+  }
+  &__block,
+  .wp-block-group {
+    &:nth-child(n + 2) {
+      margin-top: 60px;
+      @include media() {
+        margin-top: 32px;
+      }
+    }
+    .wp-block-group__inner-container {
+      h2 {
+        font-size: 22px;
+        letter-spacing: 0.3em;
+        line-height: 16px;
+        font-weight: 400;
+        display: inline-block;
+        padding-bottom: 16px;
+        border-bottom: 2px solid $primary;
+        margin-bottom: 32px;
+        @include media() {
+          display: block;
+          font-size: 18px;
+          line-height: 13px;
+          margin-bottom: 20px;
+        }
+      }
+      p,
+      ol,
+      ul {
+        font-size: 16px;
+        line-height: 2;
+        font-weight: 400;
+        letter-spacing: 0.3em;
+        margin-right: -0.3em;
+        word-break: break-all;
+        @include media() {
+          font-size: 14px;
+          line-height: math.div(30, 14);
+        }
+      }
+      & > ul {
+        & > li {
+          padding-left: 1.3em;
+          position: relative;
+          &::before {
+            content: '・';
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+      & > ol {
+        counter-reset: item;
+        & > li {
+          padding-left: 1.6em;
+          position: relative;
+          &::before {
+            content: counter(item)'.';
+            counter-increment: item;
+            letter-spacing: 0;
+            position: absolute;
+            top: 0;
+            left: 0.3em;
+          }
+          & > ol {
+            & > li {
+              padding-left: 1.6em;
+              position: relative;
+              &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+              &:nth-child(1) {
+                &::before {
+                  content: 'a.';
+                }
+              }
+              &:nth-child(2) {
+                &::before {
+                  content: 'b.';
+                }
+              }
+              &:nth-child(3) {
+                &::before {
+                  content: 'c.';
+                }
+              }
+              &:nth-child(4) {
+                &::before {
+                  content: 'd.';
+                }
+              }
+              &:nth-child(5) {
+                &::before {
+                  content: 'e.';
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

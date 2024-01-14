@@ -1,0 +1,20 @@
+@use "../base/_base" as *;
+@use "sass:math";
+
+.page {
+  &__title {
+    text-align: center;
+    color: $font;
+    font-size: 28px;
+    line-height: 20px;
+    letter-spacing: 0.3em;
+    font-weight: 400;
+    margin-bottom: 80px;
+    margin-right: -0.3em;
+    @include media() {
+      margin-bottom: 40px;
+      font-size: 22px;
+      line-height: 16px;
+    }
+  }
+}

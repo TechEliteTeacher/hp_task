@@ -31,10 +31,6 @@
               'ブログ',
               '/blog/'
             ],
-            [
-              'お知らせ',
-              '/news/'
-            ],
           ];
           foreach($footer_nav as list($text, $link)):
         ?>

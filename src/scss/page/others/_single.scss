@@ -1,0 +1,79 @@
+@use "../../base/_base" as *;
+@use "sass:math";
+
+.single {
+  &__head {
+    margin-bottom: 25px;
+    @include media() {
+      margin-bottom: 16px;
+    }
+  }
+  &__date {
+    display: block;
+    font-size: 14px;
+    line-height: 10px;
+    letter-spacing: 0.3em;
+    font-weight: 400;
+    margin-bottom: 12px;
+    @include media() {
+      font-size: 12px;
+      line-height: 9px;
+      margin-bottom: 8px;
+    }
+  }
+  &__title {
+    font-size: 24px;
+    line-height: 2;
+    letter-spacing: 0.3em;
+    font-weight: 400;
+    @include media() {
+      font-size: 20px;
+      line-height: math.div(36 , 20);
+    }
+  }
+  &__body {
+    font-size: 16px;
+    line-height: 2;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    margin-bottom: 60px;
+    @include media() {
+      font-size: 14px;
+      line-height: math.div(30, 14);
+      margin-bottom: 28px;
+    }
+  }
+  &__btn {
+    border: 1px solid $primary;
+    color: $primary;
+    min-height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 380px;
+    padding-left: 0.6em;
+    padding-right: 0.3em;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 18px;
+    letter-spacing: 0.3em;
+    font-weight: 400;
+    @include media() {
+      min-width: 0;
+      width: 100%;
+      font-size: 16px;
+    }
+    svg {
+      position: absolute;
+      left: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+      @include media() {
+        left: 20px;
+      }
+    }
+    &-box {
+      text-align: center;
+    }
+  }
+}

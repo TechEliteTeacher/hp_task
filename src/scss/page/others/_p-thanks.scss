@@ -1,0 +1,24 @@
+@use "../../base/_base" as *;
+@use "sass:math";
+
+.p-thanks {
+  &__txt {
+    font-size: 18px;
+    line-height: math.div(34, 18);
+    letter-spacing: 0.3em;
+    font-weight: 400;
+    margin-right: -0.3em;
+    text-align: center;
+    &:nth-child(n + 2) {
+      margin-top: 80px;
+      @include media() {
+        margin-top: 40px;
+      }
+    }
+    @include media() {
+      font-size: 16px;
+      line-height: 2;
+      text-align: left;
+    }
+  }
+}

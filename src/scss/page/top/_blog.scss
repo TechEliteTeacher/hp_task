@@ -1,0 +1,226 @@
+@use "../../base/_base" as *;
+@use "sass:math";
+
+.blog {
+  background: $background-grey;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  @include media() {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+  .content_title {
+    gap: 2rem;
+    justify-content: flex-start;
+    margin-bottom: 80px;
+    max-width: 100%;
+    @include media() {
+      margin-bottom: 40px;
+    }
+  }
+  &__inner {
+    padding-right: 20px;
+    padding-left: 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 30px;
+    margin-bottom: 60px;
+    &.-related {
+      margin-bottom: 0;
+    }
+    @include media() {
+      margin-bottom: 28px;
+      gap: 24px;
+      &.-archive {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  &__item {
+    flex: 0 0 auto;
+    width: calc(math.div(100%, 3) - 20px);
+    &.-related {
+      width: calc(50% - 15px);
+      @include media() {
+        width: 100%;
+      }
+    }
+    @include media() {
+      width: 100%;
+    }
+    &-pic {
+      &::before {
+        padding-top: math.div(230, 380) * 100%;
+        @include media() {
+          padding-top: math.div(200, 335) * 100%;
+        }
+      }
+      transition: 0.3s ease-out;
+      transition-property: opacity;
+      @include hoverAnime {
+        opacity: 0.7;
+      }
+    }
+    &-body {
+      padding: 24px;
+      background: #fff;
+      &.-grey {
+        background: #f3f3f3;
+      }
+      @include media() {
+        padding: 20px;
+      }
+    }
+    &-time {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 10px;
+      letter-spacing: 0.3em;
+      display: block;
+      color: $font;
+      margin-bottom: 12px;
+      @include media() {
+        font-size: 12px;
+        line-height: 9px;
+      }
+    }
+    &-title {
+      a {
+        font-size: 16px;
+        line-height: math.div(28, 16);
+        letter-spacing: 0.3em;
+        font-weight: 400;
+        color: $font;
+        transition: 0.3s ease-out;
+        transition-property: opacity;
+        @include hoverAnime {
+          opacity: 0.7;
+          text-decoration: underline;
+        }
+        @include media() {
+          font-size: 14px;
+          line-height: math.div(26, 14);
+        }
+      }
+    }
+  }
+  &__category {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+    @include media() {
+      margin-top: 12px;
+    }
+    a {
+      background: $primary;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1;
+      white-space: nowrap;
+      letter-spacing: 0.3em;
+      border-radius: 13px;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 83px;
+      padding-left: 0.6em;
+      padding-right: 0.3em;
+      font-weight: 400;
+      transition: 0.3s ease-out;
+      transition-property: opacity;
+      box-sizing: border-box;
+      @include hoverAnime {
+        opacity: 0.7;
+      }
+      @include media() {
+        height: 25px;
+        min-width: 60px;
+        font-size: 12px;
+      }
+    }
+  }
+  &__btn {
+    border: 1px solid $primary;
+    background: #fff;
+    min-height: 60px;
+    min-width: 380px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    padding-left: 3.3em;
+    padding-right: 3em;
+    color: $primary;
+    position: relative;
+    box-sizing: border-box;
+    @include media() {
+      font-size: 16px;
+      width: 100%;
+      min-width: 0;
+    }
+    svg {
+      position: absolute;
+      right: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+      @include media() {
+        right: 20px;
+      }
+    }
+    transition: 0.3s ease-out;
+    transition-property: opacity;
+    @include hoverAnime {
+      opacity: 0.7;
+    }
+    &-box {
+      text-align: center;
+    }
+  }
+  &__tabs {
+    margin-bottom: 47px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    @include media() {
+      gap: 9px;
+      margin-bottom: 40px;
+    }
+    &-item {
+      border: 1px solid $primary;
+      color: $primary;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      min-height: 40px;
+      padding-left: 19px;
+      padding-right: calc(19px - 0.3em);
+      font-size: 18px;
+      letter-spacing: 0.3em;
+      transition: 0.3s ease-out;
+      transition-property: opacity;
+      box-sizing: border-box;
+      @include hoverAnime {
+        opacity: 0.7;
+      }
+      @include media() {
+        font-size: 16px;
+        min-height: 30px;
+        width: calc(math.div(100%, 3) - 6px);
+      }
+      &.is-active {
+        background: $primary;
+        color: #fff;
+        pointer-events: none;
+      }
+    }
+  }
+}

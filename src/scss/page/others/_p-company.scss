@@ -1,0 +1,53 @@
+@use "../../base/_base" as *;
+@use "sass:math";
+
+.p-company {
+  &__item {
+    display: flex;
+    border-top: 1px solid $border;
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+    &:last-child {
+      border-bottom: 1px solid $border;
+    }
+    @include media() {
+      display: block;
+      padding: 10px 20px;
+    }
+    &-title,
+    &-text {
+      font-size: 16px;
+      line-height: 2;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      padding: 10px 20px;
+      @include media() {
+        padding: 0;
+        font-size: 14px;
+        line-height: math.div(30, 14);
+      }
+      a {
+        color: #00c2ff;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: 0.3s ease-out;
+        transition-property: opacity;
+        @include hoverAnime {
+          opacity: 0.7;
+        }
+      }
+    }
+    &-title {
+      flex: 0 0 auto;
+      width: 230px;
+      border-right: 1px solid $border;
+      @include media() {
+        border-right: none;
+        width: 100%;
+      }
+    }
+    &-text {
+      flex: 1 1 auto;
+    }
+  }
+}

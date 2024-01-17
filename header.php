@@ -25,7 +25,7 @@
                             <li><a href="#plan">プラン</a></li>
                             <li><a href="#seasons">四季</a></li>
                             <li><a href="#access">アクセス</a></li>
-                            <li><a href="#access">楽園雅苑のサービス</a></li>
+                            <li><a href="/service">楽園雅苑のサービス</a></li>
                         </ul>
                         <a class="reservation_link" href="/contact">予約</a>
                         <button class="hamburger_btn" id="js-hamburger">
@@ -56,8 +56,9 @@
                         <li><a href="<?php echo esc_url(home_url('/')); ?>#plan">プラン</a></li>
                         <li><a href="<?php echo esc_url(home_url('/')); ?>#seasons">四季</a></li>
                         <li><a href="<?php echo esc_url(home_url('/')); ?>#access">アクセス</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/')); ?>service">楽園雅苑のサービス</a></li>
                     </ul>
-                    <a class="reservation_link" href="./#form">予約</a>
+                    <a class="reservation_link" href="/contact">予約</a>
                     <button class="hamburger_btn" id="js-hamburger">
                         <span class="bar"></span>
                         <span class="txt">menu</span>

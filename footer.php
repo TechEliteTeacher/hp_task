@@ -24,8 +24,16 @@
             esc_url(home_url('/')) . "#access"
             ],
             [
+              '楽園雅苑のサービス',
+              '/service/'
+            ],
+            [
               'ブログ',
               '/blog/'
+            ],
+            [
+              'お知らせ',
+              '/news/'
             ],
           ];
           foreach($footer_nav as list($text, $link)):

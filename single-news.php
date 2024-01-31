@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: お知らせ詳細
  *
@@ -10,14 +11,12 @@
 <div class="container">
   <div class="container__inner">
     <div class="breadcrumbs serif" typeof="BreadcrumbList" vocab="https://schema.org/">
-      <?php if(function_exists('bcn_display'))
-        {
-            bcn_display();
-        }?>
+      <?php if (function_exists('bcn_display')) {
+        bcn_display();
+      } ?>
     </div>
     <div class="single__head">
-      <time class="single__date"
-        date-time="<?php echo get_the_date( 'Y-m-d' ); ?>"><?php echo get_the_date( 'Y/m/d' ); ?></time>
+      <time class="single__date" date-time="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y/m/d'); ?></time>
       <h1 class="single__title"><?php echo get_the_title(); ?></h1>
     </div>
     <div class="single__body">
@@ -33,5 +32,5 @@
     </div>
   </div>
 </div>
-<?php 
+<?php
 get_footer();

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: 楽園雅苑のサービス
  *
@@ -10,10 +11,9 @@
 <div class="container">
   <div class="container__inner">
     <div class="breadcrumbs serif" typeof="BreadcrumbList" vocab="https://schema.org/">
-      <?php if(function_exists('bcn_display'))
-        {
-            bcn_display();
-        }?>
+      <?php if (function_exists('bcn_display')) {
+        bcn_display();
+      } ?>
     </div>
     <h1 class="page__title">楽園雅苑のサービス</h1>
     <div class="p-service__body">
@@ -26,10 +26,10 @@
 
         <div class="p-service__img-box">
           <div class="p-service__img img">
-            <img src="<?php echo get_template_directory_uri()?>/img/service/img01.jpg" alt="桜庭温泉の画像1">
+            <img src="<?php echo get_template_directory_uri() ?>/img/service/img01.jpg" alt="桜庭温泉の画像1">
           </div>
           <div class="p-service__img img">
-            <img src="<?php echo get_template_directory_uri()?>/img/service/img02.jpg" alt="桜庭温泉の画像2">
+            <img src="<?php echo get_template_directory_uri() ?>/img/service/img02.jpg" alt="桜庭温泉の画像2">
           </div>
         </div>
 
@@ -63,13 +63,13 @@
 
         <div class="p-service__img-box -plan">
           <div class="p-service__img -sm img">
-            <img src="<?php echo get_template_directory_uri()?>/img/service/img03.jpg" alt="客室1">
+            <img src="<?php echo get_template_directory_uri() ?>/img/service/img03.jpg" alt="客室1">
           </div>
           <div class="p-service__img -sm img">
-            <img src="<?php echo get_template_directory_uri()?>/img/service/img04.jpg" alt="客室2">
+            <img src="<?php echo get_template_directory_uri() ?>/img/service/img04.jpg" alt="客室2">
           </div>
           <div class="p-service__img -sm img">
-            <img src="<?php echo get_template_directory_uri()?>/img/service/img05.jpg" alt="客室2">
+            <img src="<?php echo get_template_directory_uri() ?>/img/service/img05.jpg" alt="客室2">
           </div>
         </div>
 
@@ -87,10 +87,10 @@
           <p class="p-service__txt">地元の食材を使用した料理を楽しめるレストラン。<br class="only-pc">お部屋食や個室も用意され、贅沢な食体験を提供。</p>
           <div class="p-service__img-box">
             <div class="p-service__img img">
-              <img src="<?php echo get_template_directory_uri()?>/img/service/img06.jpg" alt="桜庭温泉の画像1">
+              <img src="<?php echo get_template_directory_uri() ?>/img/service/img06.jpg" alt="桜庭温泉の画像1">
             </div>
             <div class="p-service__img img">
-              <img src="<?php echo get_template_directory_uri()?>/img/service/img07.jpg" alt="桜庭温泉の画像2">
+              <img src="<?php echo get_template_directory_uri() ?>/img/service/img07.jpg" alt="桜庭温泉の画像2">
             </div>
           </div>
           <p class="p-service__detail">朝食7:00 ~ 10:00 <br class="only-sp">(ラストオーダー 9:30)<br><br class="only-sp">ランチ11:30 ~ 14:00<br class="only-sp"> (ラストオーダー 13:30)<br><br class="only-sp">ディナー18:00 ~ 21:00<br class="only-sp"> (ラストオーダー 20:30)</p>
@@ -100,13 +100,13 @@
       <div class="p-service__block">
         <h2 class="p-service__block-title">その他施設・サービス</h2>
         <p class="p-service__txt-lg -facility">会議室、イベントスペース</p>
-        
+
         <div class="p-service__img-box">
           <div class="p-service__img img">
-            <img src="<?php echo get_template_directory_uri()?>/img/service/img08.jpg" alt="会議室">
+            <img src="<?php echo get_template_directory_uri() ?>/img/service/img08.jpg" alt="会議室">
           </div>
           <div class="p-service__img img">
-            <img src="<?php echo get_template_directory_uri()?>/img/service/img09.jpg" alt="イベントスペース">
+            <img src="<?php echo get_template_directory_uri() ?>/img/service/img09.jpg" alt="イベントスペース">
           </div>
         </div>
 
@@ -114,10 +114,10 @@
           <p class="p-service__txt-lg -facility">マッサージ</p>
           <div class="p-service__img-box">
             <div class="p-service__img img">
-              <img src="<?php echo get_template_directory_uri()?>/img/service/img10.jpg" alt="マッサージチェア">
+              <img src="<?php echo get_template_directory_uri() ?>/img/service/img10.jpg" alt="マッサージチェア">
             </div>
             <div class="p-service__img img">
-              <img src="<?php echo get_template_directory_uri()?>/img/service/img11.jpg" alt="マッサージルーム">
+              <img src="<?php echo get_template_directory_uri() ?>/img/service/img11.jpg" alt="マッサージルーム">
             </div>
           </div>
         </div>
@@ -126,5 +126,5 @@
     </div>
   </div>
 </div>
-<?php 
+<?php
 get_footer();

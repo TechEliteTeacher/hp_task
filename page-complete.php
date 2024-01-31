@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: 予約が完了しました
  *
@@ -10,10 +11,9 @@
 <div class="container">
   <div class="container__inner">
     <div class="breadcrumbs serif" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if(function_exists('bcn_display'))
-        {
-            bcn_display();
-        }?>
+      <?php if (function_exists('bcn_display')) {
+        bcn_display();
+      } ?>
     </div>
     <?php the_content(); ?>
     <h1 class="page__title">予約が完了しました</h1>
@@ -23,5 +23,5 @@
     </div>
   </div>
 </div>
-<?php 
+<?php
 get_footer();

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: ご予約の確認
  *
@@ -10,10 +11,9 @@
 <div class="container">
   <div class="container__inner">
     <div class="breadcrumbs serif" typeof="BreadcrumbList" vocab="https://schema.org/">
-        <?php if(function_exists('bcn_display'))
-        {
-            bcn_display();
-        }?>
+      <?php if (function_exists('bcn_display')) {
+        bcn_display();
+      } ?>
     </div>
     <h1 class="page__title">ご予約の確認</h1>
     <p class="p-contact__hr"></p>
@@ -22,5 +22,5 @@
     </div>
   </div>
 </div>
-<?php 
+<?php
 get_footer();
